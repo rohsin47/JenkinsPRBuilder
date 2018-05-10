@@ -46,7 +46,7 @@ public abstract class GitConfigurer extends ScmConfigurer {
 			this.repo = (String) ShortTypeHandling.castToString(call2);
 
 			final Object o = new GStringImpl(new Object[] {
-					$getCallSiteArray[5].callGetProperty(CiBuildConstants.class), this.projectOrUser, this.repo },
+					$getCallSiteArray[5].callGetProperty(JenkinsBuildConstants.class), this.projectOrUser, this.repo },
 					new String[] { "", "/projects/", "/repos/", "" });
 
 			this.browseUrl = (String) ShortTypeHandling.castToString(o);
