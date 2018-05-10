@@ -1,19 +1,17 @@
 package com.tech2020.jenkins
 
-import static com.tech2020.jenkins.JenkinsBuildConstants.*
+import static com.tech2020.jenkins.BuildConstants.*
 import com.tech2020.jenkins.GitConfigurer
 
 import javaposse.jobdsl.dsl.Job
 
-class PullRequestConfigurer extends GitConfigurer {
+class PullRequestConfigurer {
 
     PullRequestConfigurer(String url) {
         super(url)
     }
 
     void configure(Job job) {
-        super.configure(job)
-
         // workaround to variable scope issues
         String theUrl = url
 
