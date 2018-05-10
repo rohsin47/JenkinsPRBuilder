@@ -41,24 +41,6 @@ public abstract class BaseJobBuilder<J extends Job> implements GroovyObject {
 		return null;
 	}
 
-	public class _addAll_closure1 extends Closure implements GeneratedClosure {
-		public _addAll_closure1(Object _thisObject) {
-			super(_thisObject);
-		}
-
-		public Object doCall(Object it) {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return arrayOfCallSite[0].callCurrent(this, it);
-			return null;
-		}
-
-		public Object doCall() {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return doCall(null);
-			return null;
-		}
-	}
-
 	protected final BaseJobBuilder addAll(Configurer... c) {
 		CallSite[] arrayOfCallSite = $getCallSiteArray();
 		arrayOfCallSite[4].call(c, new _addAll_closure1(this));
@@ -69,32 +51,6 @@ public abstract class BaseJobBuilder<J extends Job> implements GroovyObject {
 	protected final void log(String message) {
 		CallSite[] arrayOfCallSite = $getCallSiteArray();
 		arrayOfCallSite[5].call(arrayOfCallSite[6].callGetProperty(this.dslFactory), message);
-	}
-
-	public class _build_closure2 extends Closure implements GeneratedClosure {
-		public _build_closure2(Object _thisObject, Reference job) {
-			super(_thisObject);
-			Reference localReference = job;
-			this.job = localReference;
-		}
-
-		public Object doCall(Object it) {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return arrayOfCallSite[0].call(it, this.job.get());
-			return null;
-		}
-
-		public Job getJob() {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return (Job) ScriptBytecodeAdapter.castToType(this.job.get(), Job.class);
-			return null;
-		}
-
-		public Object doCall() {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return doCall(null);
-			return null;
-		}
 	}
 
 	public final J build(String name) {
@@ -146,74 +102,5 @@ public abstract class BaseJobBuilder<J extends Job> implements GroovyObject {
 		arrayOfCallSite[19].callCurrent(this, arrayOfCallSite[20].callConstructor(GitPullRequestConfigurer.class, url));
 		return this;
 		return null;
-	}
-
-	public class _methodMissing_closure3 extends Closure implements GeneratedClosure {
-		public _methodMissing_closure3(Object _thisObject, Reference name) {
-			super(_thisObject);
-			Reference localReference = name;
-			this.name = localReference;
-		}
-
-		public Object doCall(Object it) {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return arrayOfCallSite[0].call(ScriptBytecodeAdapter.getPropertySpreadSafe(_methodMissing_closure3.class,
-					arrayOfCallSite[1].callGetProperty(arrayOfCallSite[2].callGetProperty(it)), (String) "name"),
-					this.name.get());
-			return null;
-		}
-
-		public String getName() {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return (String) ShortTypeHandling.castToString(this.name.get());
-			return null;
-		}
-
-		public Object doCall() {
-			CallSite[] arrayOfCallSite = $getCallSiteArray();
-			return doCall(null);
-			return null;
-		}
-	}
-
-	public BaseJobBuilder<J> methodMissing(String name, Object args) {
-		Reference name = new Reference(name);
-		CallSite[] arrayOfCallSite = $getCallSiteArray();
-		Object configurer = arrayOfCallSite[21].call(arrayOfCallSite[22].call(this.configurers),
-				new _methodMissing_closure3(this, name));
-		if (DefaultTypeTransformation.booleanUnbox(configurer)) {
-			arrayOfCallSite[23].call(configurer, (String) name.get(), args);
-			return this;
-		}
-		throw ((Throwable) arrayOfCallSite[24].callConstructor(MissingMethodException.class, (String) name.get(),
-				arrayOfCallSite[25].callGroovyObjectGetProperty(this), args));
-		return null;
-	}
-
-	public MetaClass getMetaClass()
-  {
-    MetaClass tmp4_1 = this.metaClass;
-    if (tmp4_1 != null) {
-      return tmp4_1;
-    }
-    tmp4_1;
-    this.metaClass = $getStaticMetaClass();
-    return this.metaClass;
-  }
-
-	public void setMetaClass(MetaClass paramMetaClass) {
-		this.metaClass = paramMetaClass;
-	}
-
-	public Object invokeMethod(String paramString, Object paramObject) {
-		return getMetaClass().invokeMethod(this, paramString, paramObject);
-	}
-
-	public Object getProperty(String paramString) {
-		return getMetaClass().getProperty(this, paramString);
-	}
-
-	public void setProperty(String paramString, Object paramObject) {
-		getMetaClass().setProperty(this, paramString, paramObject);
 	}
 }
