@@ -13,8 +13,7 @@ public class MavenJobBuilder extends BaseJobBuilder<MavenJob> {
 
 	protected final MavenJob newJob(String name) {
 		CallSite[] arrayOfCallSite = $getCallSiteArray();
-		return (MavenJob) ScriptBytecodeAdapter.castToType(
-				arrayOfCallSite[4].call(arrayOfCallSite[5].callGroovyObjectGetProperty(this), name), MavenJob.class);
+		return (MavenJob) ScriptBytecodeAdapter.castToType(arrayOfCallSite[4].call(arrayOfCallSite[5].callGroovyObjectGetProperty(this), name), MavenJob.class);
 		return null;
 	}
 
