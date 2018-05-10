@@ -4,7 +4,7 @@ import groovy.lang.GroovyObject;
 import groovy.lang.MetaClass;
 import org.codehaus.groovy.runtime.callsite.CallSite;
 
-public final class JenkinsBuildConstants implements GroovyObject {
+public final class BuildConstants implements GroovyObject {
 	public static final String ARTIFACT_REPO_NAME = "artifactory";
 	public static final String ARTIFACT_REPO_URL = "";
 	public static final String RELEASE_REPO = "libs-releases";
@@ -20,7 +20,7 @@ public final class JenkinsBuildConstants implements GroovyObject {
 	public static final String JDK_7_X32_ID = "jdk_7u5_x32";
 	public static final String JDK_6_X64_ID = "jdk_6u24_x64";
 
-	private JenkinsBuildConstants() {
+	private BuildConstants() {
 		CallSite[] arrayOfCallSite = $getCallSiteArray();
 		MetaClass localMetaClass = $getStaticMetaClass();
 		this.metaClass = localMetaClass;
